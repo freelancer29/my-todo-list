@@ -183,30 +183,82 @@ h6 {
     background-color: white;
     height: 500px;
     width: 250px;
-    padding-left: 10px;
     border-radius: 20px;
     border: 2px solid black;
 }
 
-#username {
-    padding: 10px 20px;
-    font-weight: bold;
-    color: rgb(114, 11, 11);
-    width: 100%;
+#todo {
+    background-color: blue;
+    margin: 0;
+    padding: 5px 20px;
+    color: white;
+    border-radius: 20px 20px 0  0px;
 }
 
-article {
-    position: absolute;
-    top: 7%;
-    left: 2%;
-    font-size: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: italic;
-    margin-left: 5%;
-    color: rgb(8, 1, 1);
-}
-
-.division3 {
+.division3 ul {
     position: relative;
     padding: 20px;
 }
+
+.division3 ul li {
+    position: relative;
+    list-style-type: none;
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+}
+
+.division3 ul li label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.division3 ul li label input {
+    visibility: hidden;
+    appearance: none;
+}
+
+.division3 ul li label p {
+    position: absolute;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid blue;
+    border-bottom: 2px solid blue;
+    transform: rotate(-40deg);
+} 
+
+.division3 ul li label input:checked~p {
+    text-decoration: line-through;
+    color: black;
+}
+
+.division3 ul li label input:checked~p {
+    background-color: white;
+    border: 1px solid white;
+}
+
+input:checked~span::before {
+    border-left:  2px solid white;
+    border-bottom: 2px solid white;
+}
+
+
